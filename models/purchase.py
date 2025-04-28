@@ -17,3 +17,5 @@ class Purchase(models.Model):
         copy=False,
         tracking=True
     )
+        
+    purchase_id = fields.Many2one(comodel_name='purchase.paper', string='Purchase')

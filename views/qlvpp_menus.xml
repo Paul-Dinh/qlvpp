@@ -17,7 +17,9 @@
 
         <menuitem id="menu_dxc_lap_phieu_mua" name="Lập phiếu mua" action="purchase.purchase_rfq" parent="menu_dxc" sequence="10"/>
     
-        <menuitem id="menu_dxc_bao_cao" name="Báo cáo" action="purchase_report_id" parent="menu_dxc" sequence="20"/>
+        <menuitem id="menu_dxc_to_trinh" name="Tờ trình mua sắm" action="purchase_paper_action_id" parent="menu_dxc" sequence="20"/>
+        
+        <menuitem id="menu_dxc_bao_cao" name="Báo cáo" action="purchase_report_id" parent="menu_dxc" sequence="30"/>
 
         <menuitem id="menu_nk_lap_phieu_nhap" name="Lập phiếu nhập" action="inventory_receipt_id" parent="menu_nk" sequence="10"/>
 

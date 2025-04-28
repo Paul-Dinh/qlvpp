@@ -34,6 +34,7 @@ Long description of module's purpose
 
         'views/purchase_view.xml',
         'views/purchase_report.xml',
+        'views/purchase_paper.xml',
         'views/inventory.xml',
         'views/qlvpp_menus.xml',
     ],
