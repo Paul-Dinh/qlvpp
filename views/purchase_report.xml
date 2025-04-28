@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="purchase_report_inherit" model="ir.ui.view">
+            <field name="name">purchase.report.graph.inherit</field>
+            <field name="model">purchase.report</field>
+            <field name="inherit_id" ref="purchase.view_purchase_order_graph"/>
+            <field name="arch" type="xml">
+                <xpath expr="//graph" position="inside">
+                    <field name="partner_id"/>
+            </xpath>
+            </field>
+        </record>
+
+        <record id="purchase_report_id" model="ir.actions.act_window"> 
+            <field name="name">Purchase Report</field>
+            <field name="res_model">purchase.report</field>    
+            <field name="view_mode">graph</field>
+        </record>
+
+    </data>
+</odoo>

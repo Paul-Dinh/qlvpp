@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="purchase_view_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.tree.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='activity_ids']" position="replace"/>
+                <xpath expr="//field[@name='origin']" position="replace"/>
+
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="string">Mã phiếu</attribute>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="string">Nhà cung cấp</attribute>
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="attributes">
+                    <attribute name="string">Người tạo phiếu</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_order']" position="attributes">
+                    <attribute name="string">Ngày đặt hàng</attribute>
+                </xpath>
+                <xpath expr="//field[@name='amount_total']" position="attributes">
+                    <attribute name="string">Tổng cộng</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="purchase_kanban_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.kanban.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.view_purchase_order_kanban"/>
+            <field name="arch" type="xml">
+                <!-- <xpath expr="//div[@class='o_list_renderer_kpi']" position="replace"/> -->
+                <xpath expr="//kanban" position="inside">
+                    <field name="date_approve"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="purchase_view_form_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.form.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <field name="state" position="replace">
+                <field name="state" widget="statusbar" options="{'clickable': '0'}"
+                    readonly="company_id != False"
+                    statusbar_visible="draft,sent,purchase"/>
+                </field>
+                <xpath expr="//button[@name='button_draft']" position="attributes">
+                    <attribute name="string">Đề xuất mua</attribute>
+                </xpath>
+                <xpath expr="//button[@name='print_quotation']" position="attributes">
+                    <attribute name="string">Chờ duyệt</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_confirm']" position="attributes">
+                    <attribute name="string">Đã duyệt</attribute>
+                </xpath>
+                <xpath expr="//button[@name='button_cancel']" position="attributes">
+                    <attribute name="string">Từ chối</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_ref']" position="replace"/>
+                <xpath expr="//button[@name='%(purchase_stock.action_purchase_vendor_delay_report)d']" position="replace"/>
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="string">Nhà cung cấp</attribute>
+                </xpath>
+                <xpath expr="//field[@name='currency_id']" position="attributes">
+                    <attribute name="string">Loại tiền tệ</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_order']" position="attributes">
+                    <attribute name="string">Ngày đặt hàng</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_planned']" position="attributes">
+                    <attribute name="string">Ngày giao dự kiến</attribute>
+                </xpath>
+                <xpath expr="//field[@name='picking_type_id']" position="attributes">
+                    <attribute name="string">Gửi đến</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

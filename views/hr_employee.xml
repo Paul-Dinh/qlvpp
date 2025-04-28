@@ -1,0 +1,14 @@
+<odoo>
+
+    <record id="action_hr_employee" model="ir.actions.act_window">
+        <field name="name">Nhân viên</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_hr_department" model="ir.actions.act_window">
+        <field name="name">Phòng ban</field>
+        <field name="res_model">hr.department</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record id="inventory_receipt_view_inherit" model="ir.ui.view">
+            <field name="name">inventory.receipt.tree</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="string">Mã kho</attribute>
+                </xpath>
+                <xpath expr="//field[@name='location_id']" position="attributes">
+                    <attribute name="string">Nguồn cung</attribute>
+                </xpath>
+                <xpath expr="//field[@name='location_dest_id']" position="attributes">
+                    <attribute name="string">Đích đến</attribute>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="string">Khách hàng</attribute>
+                </xpath>
+                <xpath expr="//field[@name='scheduled_date']" position="attributes">
+                    <attribute name="string">Lịch đặt</attribute>
+                </xpath>
+                <xpath expr="//field[@name='origin']" position="attributes">
+                    <attribute name="string">Mã phiếu</attribute>
+                </xpath>
+                <xpath expr="//field[@name='state']" position="attributes">
+                    <attribute name="string">Trạng thái</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inventory_receipt_kanban_inherit" model="ir.ui.view">
+            <field name="name">inventory.receipt.kanban</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.stock_picking_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//kanban" position="inside">
+                    <field name="scheduled_date"/>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="inventory_receipt_form_inherit" model="ir.ui.view">
+            <field name="name">inventory.receipt.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="string">Tên khách hàng</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inventory_receipt_id" model="ir.actions.act_window">
+            <field name="name">Receipts</field>
+            <field name="res_model">stock.picking</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="domain">[('picking_type_code','=','incoming')]</field>
+            <field name="context">{'default_picking_type_code': 'incoming'}</field>
+        </record>
+
+    </data>
+
+</odoo>
