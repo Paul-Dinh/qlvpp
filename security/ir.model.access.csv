@@ -1,5 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_purchase_employee,access.purchase.employee,model_purchase_order,qlvpp.group_purchase_employee,1,1,1,0
-access_purchase_warehouse,access.purchase.warehouse,model_purchase_order,qlvpp.group_purchase_warehouse,1,1,0,0
-access_purchase_leader,access.purchase.leader,model_purchase_order,qlvpp.group_purchase_leader,1,1,1,1
+
 access_purchase_paper,purchase.paper,model_purchase_paper,,1,1,1,1
+
+access_purchase_order_employee,access.purchase.order,model_purchase_order,group_qlvpp_employee,1,1,1,0
+access_purchase_order_warehouse,access.purchase.order,model_purchase_order,group_qlvpp_warehouse,1,1,0,1
+access_purchase_order_leader,access.purchase.order,model_purchase_order,group_qlvpp_leader,1,1,1,1

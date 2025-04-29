@@ -21,6 +21,8 @@
         
         <menuitem id="menu_dxc_bao_cao" name="Báo cáo" action="purchase_report_id" parent="menu_dxc" sequence="30"/>
 
+        <menuitem id="menu_dxc_san_pham" name="Sản phẩm" action="purchase_product_id" parent="menu_dxc" sequence="40"/>
+
         <menuitem id="menu_nk_lap_phieu_nhap" name="Lập phiếu nhập" action="inventory_receipt_id" parent="menu_nk" sequence="10"/>
         
     
