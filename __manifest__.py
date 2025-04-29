@@ -44,5 +44,7 @@ Long description of module's purpose
         'demo/demo.xml',
     ],
     'application': True,
+    'installable': True,
+    'auto_install': False,
 }
 

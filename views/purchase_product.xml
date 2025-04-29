@@ -23,7 +23,7 @@
                 </xpath>
             </field>
         </record>
-
+    
         <record id="purchase_product_form_inherit" model="ir.ui.view">
             <field name="name">product.template.product.form</field>
             <field name="model">product.template</field>

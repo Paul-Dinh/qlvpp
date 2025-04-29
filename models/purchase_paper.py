@@ -11,4 +11,5 @@ class PurchasePaper(models.Model):
     def _compute_paper_count(self):
         for record in self:
             record.paper_count = len(record.paper_ids)
+            
 
