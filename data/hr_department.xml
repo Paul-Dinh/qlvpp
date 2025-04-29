@@ -11,17 +11,3 @@
         <field name="name">Lãnh đạo</field>
     </record>
 </odoo>
-
-<!-- <odoo>
-    <record id="department_nhanvien" model="hr.department">
-        <field name="name">Nhân viên</field>
-    </record>
-
-    <record id="department_thukho" model="hr.department">
-        <field name="name">Thủ kho</field>
-    </record>
-
-    <record id="department_lanhdao" model="hr.department">
-        <field name="name">Lãnh đạo</field>
-    </record>
-</odoo> -->

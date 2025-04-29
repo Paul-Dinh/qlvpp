@@ -7,4 +7,4 @@ class PurchasePaper(models.Model):
     date = fields.Date(string='Ngày tạo', default=lambda self: fields.Date.context_today(self),readonly=True)
 
 
-    paper_ids =fields.One2many(comodel_name='purchase.order', inverse_name='purchase_id', string='Purchase')
+    paper_ids =fields.One2many(comodel_name='purchase.order', inverse_name='purchase_id', string='Purchase',domain=[('state', 'in', ('purchase', 'Chờ duyệt'))])
