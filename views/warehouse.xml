@@ -2,8 +2,8 @@
 <odoo>
 
     <data>
-        <record id="inventory_receipt_view_inherit" model="ir.ui.view">
-            <field name="name">inventory.receipt.tree</field>
+        <record id="inventory_warehouse_view_inherit" model="ir.ui.view">
+            <field name="name">inventory.warehouse.tree</field>
             <field name="model">stock.picking</field>
             <field name="inherit_id" ref="stock.vpicktree"/>
             <field name="arch" type="xml">
@@ -31,8 +31,8 @@
                 </field>
         </record>
 
-        <record id="inventory_receipt_kanban_inherit" model="ir.ui.view">
-            <field name="name">inventory.receipt.kanban</field>
+        <record id="inventory_warehouse_kanban_inherit" model="ir.ui.view">
+            <field name="name">inventory.warehouse.kanban</field>
             <field name="model">stock.picking</field>
             <field name="inherit_id" ref="stock.stock_picking_kanban"/>
             <field name="arch" type="xml">
@@ -42,57 +42,31 @@
             </field>
         </record>
 
-        <record id="inventory_receipt_form_inherit" model="ir.ui.view">
-            <field name="name">inventory.receipt.form</field>
+        <record id="inventory_warehouse_form_inherit" model="ir.ui.view">
+            <field name="name">inventory.warehouse.form</field>
             <field name="model">stock.picking</field>
             <field name="inherit_id" ref="stock.view_picking_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='partner_id']" position="attributes">
                     <attribute name="string">Tên khách hàng</attribute>
                 </xpath>
-                
-
-                <xpath expr="//field[@name='picking_type_id']" position="attributes">
-                    <!-- <attribute name="readonly">1</attribute> -->
-                    <attribute name="invisible">1</attribute>
-                </xpath>
-                
                 <xpath expr="//button[@name='action_confirm']" position="attributes">
                     <attribute name="string">Chờ duyệt</attribute>
                 </xpath>
                 <xpath expr="//button[@name='button_validate']" position="attributes">
                     <attribute name="string">Phê duyệt</attribute>
                 </xpath>
-                <xpath expr="//button[@name='action_cancel']" position="attributes">
-                    <attribute name="string">Từ chối</attribute>
-                </xpath>
-                
-                <xpath expr="//button[@name='do_print_picking']" position="replace"/>
-
-                <xpath expr="//button[@name='action_open_label_type']" position="replace"/>
-
-                <xpath expr="//button[@name='button_validate' and @invisible=&quot;state in ('waiting', 'assigned', 'done', 'cancel')&quot;]" position="replace"/>
-                
-                <xpath expr="//field[@name='state']" position="attributes">
-                    <attribute name="widget">statusbar</attribute>
-                    <attribute name="statusbar_visible">assigned,confirmed</attribute>
-                    <attribute name="title"></attribute>
-                </xpath> 
-
-            
-
 
                  </field>
         </record>
 
-        <record id="inventory_receipt_id" model="ir.actions.act_window">
-            <field name="name">Receipts</field>
+        <record id="inventory_warehouse_id" model="ir.actions.act_window">
+            <field name="name">warehouses</field>
             <field name="res_model">stock.picking</field>
             <field name="view_mode">tree,kanban,form</field>
-            <field name="domain">[('picking_type_code','=','incoming')]</field>
-            <field name="context">{'default_picking_type_code': 'incoming'}</field>
-        </record>
-        
+            <field name="domain">[('picking_type_id', '=', 2)]</field>
+            </record>
+
     </data>
 
 </odoo>

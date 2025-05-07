@@ -7,3 +7,5 @@ from . import inventory
 from . import hr_employee
 from . import purchase_paper
 from . import purchase_product
+from . import inventory_paper
+from . import warehouse

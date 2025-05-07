@@ -8,7 +8,9 @@
 
         <menuitem id="menu_nk" name="Nhập kho" parent="menu_qlvpp_root" sequence="20"/>
 
-        <menuitem id="menu_nv" name="Phòng ban" parent="menu_qlvpp_root" sequence="30"/>
+        <menuitem id="menu_xsd" name="Xuất sử dụng" parent="menu_qlvpp_root" sequence="30"/>
+
+        <menuitem id="menu_nv" name="Phòng ban" parent="menu_qlvpp_root" sequence="40"/>
 
         <menuitem id="menu_nv_phongban" name="Phòng ban" action="action_hr_department" parent="menu_nv" sequence="10"/>
 
@@ -24,6 +26,10 @@
         <menuitem id="menu_dxc_san_pham" name="Sản phẩm" action="purchase_product_id" parent="menu_dxc" sequence="40"/>
 
         <menuitem id="menu_nk_lap_phieu_nhap" name="Lập phiếu nhập" action="inventory_receipt_id" parent="menu_nk" sequence="10"/>
+
+        <menuitem id="menu_nk_to_trinh_nhap_kho" name="Tờ trình nhập kho" action="inventory_paper_action_id" parent="menu_nk" sequence="20"/>
+
+        <menuitem id="menu_nk_xuat" name="Xuất" action="inventory_warehouse_id" parent="menu_xsd" sequence="10"/>
         
     
     </data>

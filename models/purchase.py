@@ -19,3 +19,13 @@ class Purchase(models.Model):
     )
         
     purchase_id = fields.Many2one(comodel_name='purchase.paper', string='Purchase')
+
+    # def action_cancel(self):
+    #     """ Override để ngăn chuyển hướng sau khi hủy phiếu kho """
+    #     # Gọi phương thức gốc để thực hiện logic hủy phiếu kho
+    #     res = super(Purchase, self).action_cancel()
+
+    #     # Phương thức gốc có thể trả về một dictionary chứa action chuyển hướng.
+    #     # Nếu bạn muốn ở lại trang hiện tại, hãy trả về True hoặc một dictionary rỗng.
+    #     # Trả về True thường là đủ để Odoo refresh trang hiện tại.
+    #     return True

@@ -37,6 +37,8 @@ Long description of module's purpose
         'views/purchase_paper.xml',
         'views/purchase_product.xml',
         'views/inventory.xml',
+        'views/inventory_paper.xml',
+        'views/warehouse.xml',
         'views/qlvpp_menus.xml',
     ],
     # only loaded in demonstration mode
